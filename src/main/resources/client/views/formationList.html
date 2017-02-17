@@ -1,0 +1,44 @@
+<ul class="nav nav-tabs">
+	<li role="presentation" class="active"><a href="#/formation">Home</a></li>
+	<li role="presentation"><a href="#/formation">Liste des
+			formations</a></li>
+	<li role="presentation"><a href="#/addFormation">Nouvelle
+			Formation</a></li>
+</ul>
+<div class="container" ng-controller="FormationCtrl">
+	<table class="table table-striped" style="border: 1px solid #2980B9;"">
+		<thead>
+			<tr
+				style="background-color: rgba(54, 146, 158, 0.66); color: rgb(255, 255, 255);">
+				<th>Code Formation</th>
+				<th>Nom de formation</th>
+				<th>Nombre d'annee(s)</th>
+				<th>Diplome</th>
+				<th>Double Diplome</th>
+				<th>Debut Accreditation</th>
+				<th>Fin Accreditation</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody ng-repeat="formation in formations">
+			<tr>
+				<td>{{formation.codeFormation}}</td>
+				<td>{{formation.nomFormation}}</td>
+				<td>{{formation.nombreDAnnee}}</td>
+				<td>{{formation.diplome}}</td>
+				<td>{{formation.estUnDoubleDiplome}}</td>
+				<td>{{formation.debutAccreditation}}</td>
+				<td>{{formation.finAccreditation}}</td>
+				<td><a class="teal-text"
+					href="#/update/{{formation.codeFormation}}"><i
+						class="fa fa-pencil"></i></a> <a class="red-text"
+					href="#/delete/{{formation.codeFormation}}"><i
+						class="fa fa-times"></i></a></td>
+			</tr>
+		</tbody>
+	</table>
+	<button type="button" class="btn btn-primary"
+		style="background-color: rgba(54, 146, 158, 0.66); color: rgb(255, 255, 255);">
+		<a href="#/addFormation">Add Formation</a>
+	</button>
+</div>
